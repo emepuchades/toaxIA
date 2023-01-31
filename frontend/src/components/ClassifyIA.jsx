@@ -3,7 +3,7 @@ import axios from 'axios';
 import Tweets from '../utils/Tweets';
 import { examplesIA } from '../utils/ExamplesIA';
 
-function ClassifyIA() {
+function ClassifyIA({ userTwitter }) {
     const [classify, setClassify] = useState([]);
     const [examples, setExamples] = useState(examplesIA);
     const [tweets, setTweets] = useState(Tweets);
@@ -42,18 +42,22 @@ function ClassifyIA() {
     }, []);
 
     return (
-        <div className="App">
-            {classify ?
-                classify.map(item => {
-                    return (
-                        <div key={item.id}>
-                            <p>{item.input}</p>
-                            <p>{item.prediction}</p>
-                        </div>
-                    )
-                })
-                : null
+        <div className="container flex flex-wrap items-center justify-between mx-auto">
+            <div>            {
+                userTwitter !== '' ?
+                    classify ?
+                        classify.map(item => {
+                            return (
+                                <div key={item.id}>
+                                    <p>{item.input}</p>
+                                    <p>{item.prediction}</p>
+                                </div>
+                            )
+                        })
+                        : null
+                    : null
             }
+            </div>
         </div>
     )
 }
