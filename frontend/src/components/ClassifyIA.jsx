@@ -9,37 +9,33 @@ function ClassifyIA({ userTwitter }) {
     const [tweets, setTweets] = useState(Tweets);
 
     useEffect(() => {
-
-        async function cohereIA() {
-            console.log(import.meta.env.PUBLIC_URL_COHERE, 'url');
-
-            var data = JSON.stringify({
-                "inputs": tweets,
-                "examples": examples,
-            })
-
-            var config = {
-                method: 'post',
-                url: import.meta.env.PUBLIC_URL_COHERE,
-                headers: {
-                    'Authorization': `BEARER ${import.meta.env.PUBLIC_API_COHERE}`,
-                    'Content-Type': 'application/json',
-                    'Cohere-Version': '2022-12-06',
-                },
-                data: data
-            };
-
-            axios(config)
-                .then(function (response) {
-                    setClassify(response.data.classifications)
-                })
-                .catch(function (error) {
-                    console.log('error', error);
-                });
-        }
-
-        cohereIA();
     }, []);
+
+    async function cohereIA() {
+        var data = JSON.stringify({
+            "inputs": tweets,
+            "examples": examples,
+        })
+
+        var config = {
+            method: 'post',
+            url: import.meta.env.PUBLIC_URL_COHERE,
+            headers: {
+                'Authorization': `BEARER ${import.meta.env.PUBLIC_API_COHERE}`,
+                'Content-Type': 'application/json',
+                'Cohere-Version': '2022-12-06',
+            },
+            data: data
+        };
+
+        axios(config)
+            .then(function (response) {
+                setClassify(response.data.classifications)
+            })
+            .catch(function (error) {
+                console.log('error', error);
+            });
+    }
 
     return (
         <div className="container flex flex-wrap items-center justify-between mx-auto">

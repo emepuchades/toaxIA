@@ -1,4 +1,5 @@
 import React from 'react'
+import './Components.style.css'
 import Logo from '../assets/images/toax-logo.png'
 
 function Header() {
@@ -9,7 +10,7 @@ function Header() {
                     <img src={Logo} className="" width='100px' height='380px' alt="TTOXIC Logo" />
                     <h2><span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-purple-400">
                         TOAX
-                        <span className="bg-blue-100 text-blue-800 text-2xl font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-2">
+                        <span className="hackathon-tag bg-blue-100 text-blue-800 text-2xl font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-2">
                             HACKATHON</span>
                     </span></h2>
                 </div>
