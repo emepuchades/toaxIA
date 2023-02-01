@@ -2,3 +2,13 @@
   font-size: 12px;
   position: fixed;
 }
+
+.container-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  height: 20vh;
+}

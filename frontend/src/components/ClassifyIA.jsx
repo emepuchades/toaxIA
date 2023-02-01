@@ -1,14 +1,9 @@
-import { useState, useEffect } from 'react'
-
-function ClassifyIA({ timeline, error }) {
+function ClassifyIA({ timeline }) {
 
     return (
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
-            <div>
-                {error ?
-                    <span>{ error}</span>
-                    : <p>Timeline</p>
-                }
+        <div className="self-center">
+            <div>      
+                    <p>{console.log(timeline)}</p>
             </div>
         </div>
     )
