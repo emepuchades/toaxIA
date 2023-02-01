@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import getTimeLine from '../utils/Functions';
+import getTimeLine from '../services/getClasifyCohere';
 
 function UserTwitter({ userTwitter, setUserTwitter }) {
     const [trends, setTrends] = useState([])

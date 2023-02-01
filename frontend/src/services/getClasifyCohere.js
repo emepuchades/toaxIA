@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default function getTimeLine(userTwitter) {
     axios
-        .get('http://localhost:4000/api/timeline', {
+        .get(`${import.meta.env.PUBLIC_URL_BACKEND}/api/timeline`, {
             params: {
                 username: userTwitter,
             },
