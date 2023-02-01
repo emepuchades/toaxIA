@@ -3,7 +3,6 @@ import Header from '../components/Header'
 import ClassifyIA from '../components/ClassifyIA'
 import UserTwitter from '../components/UserTwitter'
 
-
 function Dashboard() {
     const [userTwitter, setUserTwitter] = useState('')
 
@@ -13,9 +12,6 @@ function Dashboard() {
             <UserTwitter
                 userTwitter={userTwitter}
                 setUserTwitter={setUserTwitter}
-            />
-            <ClassifyIA
-                userTwitter={userTwitter}
             />
         </>
     )

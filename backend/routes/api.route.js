@@ -3,11 +3,9 @@ const { getUserId }  = require('../services/getUserID')
 
 router.get('/timeline', async (req, res, next) => {
   const username = req.query.username
-  console.log('username', req.query.username)
-  const timeline = await getUserId(username)
-
+  const timeline = await getUserId(username) 
+   
   res.send(timeline)
-
 })
 
 module.exports = router

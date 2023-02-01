@@ -1,6 +1,5 @@
 var axios = require('axios');
 const { getTimeLine } = require('./getTimeline');
-const { getClasifyCohere } = require('./getClasify');
 
  async function getUserId(username) {
     var config = {
@@ -16,11 +15,11 @@ const { getClasifyCohere } = require('./getClasify');
         .then(async function (response) {
             const userTwitterID = response.data.data.id
             const timelineUser = await getTimeLine(userTwitterID)
-            getClasifyCohere()
+            
             return timelineUser
         })
         .catch(function (error) {
-            console.log(error);
+            return { error: 'No existe el usuario' }
         });
     return timeline    
 }

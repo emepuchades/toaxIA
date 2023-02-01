@@ -1,6 +1,7 @@
 var axios = require('axios');
+const { getClasifyCohere } = require('./getClasify');
 
- async function getTimeLine(idUserName) {
+async function getTimeLine(idUserName) {
     var config = {
         method: 'get',
         url: `https://api.twitter.com/2/users/${idUserName}/tweets?max_results=10`,
@@ -10,11 +11,12 @@ var axios = require('axios');
     };
 
     var timeline = await axios(config)
-        .then(function (response) {
-            return response.data.data
+        .then(async function (response) {
+                const clasyCohere = await getClasifyCohere(response.data.data)
+                return clasyCohere
         })
         .catch(function (error) {
-            console.log(error);
+            return { error: 'Tienes cuenta candado' };
         });
 
     return timeline
