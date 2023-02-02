@@ -1,5 +1,6 @@
 var axios = require('axios');
-const { examplesIA } = require('../utils/ExamplesIA')
+const { examplesIA } = require('../utils/ExamplesIA');
+const { parseStats } = require('./parseStats');
 //const { tweets } = require('../utils/Tweets')
 
 async function getClasifyCohere(userTimeLine) {
@@ -24,7 +25,8 @@ async function getClasifyCohere(userTimeLine) {
 
     var tweetsClasify = axios(config)
         .then(function (response) {
-            return response.data.classifications
+            const dataCohere = parseStats(response.data.classifications)
+            return dataCohere
         })
         .catch(function (error) {
             console.log('error', error);

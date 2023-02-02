@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header'
-import ClassifyIA from '../components/ClassifyIA'
 import UserTwitter from '../components/UserTwitter'
 
 function Dashboard() {

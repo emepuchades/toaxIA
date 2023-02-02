@@ -5,10 +5,9 @@ import UserInput from './userInput';
 import Faq from './Faq';
 
 function UserTwitter({ userTwitter, setUserTwitter }) {
-    const [timeline, setTimeline] = useState([])
+    const [timeline, setTimeline] = useState({})
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-
 
     useEffect(() => {
         error !== '' ?
@@ -17,7 +16,7 @@ function UserTwitter({ userTwitter, setUserTwitter }) {
     }, [userTwitter]);
 
     async function updateTimelines() {
-        if (timeline.length > 0) { setTimeline([]) } else { setError('') }
+        if (timeline.length > 0) { setTimeline({}) } else { setError('') }
         setLoading(true)
 
         await axios
@@ -30,7 +29,9 @@ function UserTwitter({ userTwitter, setUserTwitter }) {
                 response.data.error ?
                     setError(response.data.error)
                     :
-                    setTimeline(response.data)
+                    setTimeline(({
+                        ...response.data
+                    }))
             })
             .catch(error => console.log('error react', error.message))
 
@@ -46,18 +47,19 @@ function UserTwitter({ userTwitter, setUserTwitter }) {
                 loading={loading}
                 updateTimelines={updateTimelines}
             />
-            {timeline.length > 0 ?
+            {console.log('timeline', timeline)}
+
+            {Object.keys(timeline).length !==  0 ?
                 !loading ?
                     <div>
                         <ClassifyIA
                             timeline={timeline}
-                            error={error}
+                            username={userTwitter}
                         />
                     </div>
                     : null
                 : null}
 
-            <Faq />
         </div>
     )
 }

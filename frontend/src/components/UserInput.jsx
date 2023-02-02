@@ -2,9 +2,9 @@ import React from 'react'
 
 function UserInput({ userTwitter, setUserTwitter, error, loading, updateTimelines }) {
     return (
-        <div class="self-center">
+        <div className="self-center">
             <p className="text-4xl font-black text-gray-900 dark:text-white mb-7">¿Qué tan tóxico es tu Twitter?
-                <small class="ml-2 font-semibold text-gray-500 dark:text-gray-400"> *Según cohereIA </small></p>
+                <small className="ml-2 font-semibold text-gray-500 dark:text-gray-400"> *Según cohereIA </small></p>
             <p className="text-4xl font-medium text-gray-900 dark:text-white mb-7">Introduce tu usuario de twitter:</p>
 
             <label htmlFor="search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -38,7 +38,9 @@ function UserInput({ userTwitter, setUserTwitter, error, loading, updateTimeline
                         </svg> : null}
                     Analiza tu twitter
                 </button>
-                {error !== '' ? <p class="mt-2 text-lg text-red-600 dark:text-red-500">* {error}</p> : null}
+            </div>
+            <div className="mt-4 relative">
+                {error !== '' ? <p className="mt-2 text-lg text-red-600 dark:text-red-500">* {error}</p> : null}
                 <p className="mb-3 font-light text-gray-500 dark:text-gray-400">* Ten en cuenta que la cuenta debe de ser publica para clasificar tus tweets.</p>
             </div>
         </div>
