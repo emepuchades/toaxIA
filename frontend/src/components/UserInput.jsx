@@ -2,7 +2,7 @@ import React from 'react'
 
 function UserInput({ userTwitter, setUserTwitter, error, loading, updateTimelines }) {
     return (
-        <div className="self-center">
+        <div className="self-center width-60">
             <p className="text-4xl font-black text-gray-900 dark:text-white mb-7">¿Qué tan tóxico es tu Twitter?
                 <small className="ml-2 font-semibold text-gray-500 dark:text-gray-400"> *Según cohereIA </small></p>
             <p className="text-4xl font-medium text-gray-900 dark:text-white mb-7">Introduce tu usuario de twitter:</p>

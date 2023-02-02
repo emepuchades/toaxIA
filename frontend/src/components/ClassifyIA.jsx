@@ -2,12 +2,11 @@ function ClassifyIA({ timeline, username }) {
 
     return (
         <div className="self-center">
-            <div>
-                <p>userName : {username}</p>
-                <p>Eres toxico: {timeline.isToxic}</p>
-                {console.log(timeline.isToxic)}
-
-
+            <div className="relative">
+                <div className="relative">
+                    <p>userName : {username}</p>
+                    <p>Eres toxico: {timeline.percentageTotal.Toxico * 10} %  - {timeline.isToxic}</p>
+                </div>
                 <div class="relative overflow-x-auto">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -59,8 +58,6 @@ function ClassifyIA({ timeline, username }) {
                         </tbody>
                     </table>
                 </div>
-
-
             </div>
         </div>
     )

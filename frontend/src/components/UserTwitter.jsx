@@ -51,7 +51,7 @@ function UserTwitter({ userTwitter, setUserTwitter }) {
 
             {Object.keys(timeline).length !==  0 ?
                 !loading ?
-                    <div>
+                    <div className="self-center width-60">
                         <ClassifyIA
                             timeline={timeline}
                             username={userTwitter}
