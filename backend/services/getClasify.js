@@ -1,15 +1,14 @@
 var axios = require('axios');
-const { examplesIA } = require('../utils/ExamplesIA');
 const { parseStats } = require('./parseStats');
-//const { tweets } = require('../utils/Tweets')
 
 async function getClasifyCohere(userTimeLine) {
 
     var tweets = parseTweets(userTimeLine)
-    
+    var examplesCohere = parseExamples(process.env.EXAMPLES_COHERE)
+
     var data = JSON.stringify({
         "inputs": tweets,
-        "examples": examplesIA,
+        "examples": examplesCohere,
     })
 
     var config = {
@@ -37,6 +36,17 @@ async function getClasifyCohere(userTimeLine) {
 function parseTweets(tweets) {
     const tweetsArray = tweets.map((tweet) => tweet.text);
     return tweetsArray   
+}
+
+function parseExamples(examplesIA) {
+    var result = [];
+
+    for (let i = 0, a = examplesIA.split('|'); i < a.length; i += 2) {
+        var text = a[i]
+        var label = a[i + 1];
+        result.push({ text, label });
+    }    
+    return result;
 }
 
 module.exports = { getClasifyCohere }

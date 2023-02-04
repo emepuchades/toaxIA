@@ -13,9 +13,7 @@ async function parseStats(statsCohere) {
      } else {  isToxic = 'Toxico'; }
     
 
-    console.log({ statsCohere, percentageTotal, isToxic: isToxic });
     return { statsCohere, percentageTotal, isToxic: isToxic };
-
 }
 
 module.exports = { parseStats }

@@ -16,7 +16,7 @@ async function getTimeLine(idUserName) {
                 return clasyCohere
         })
         .catch(function (error) {
-            return { error: 'Tienes cuenta candado' };
+            return { error: 'No se puede acceder a una cuenta candado' };
         });
 
     return timeline
