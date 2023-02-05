@@ -54,7 +54,6 @@ function UserTwitter({ userTwitter, setUserTwitter }) {
                     <div className="self-center width-60">
                         <ClassifyIA
                             timeline={timeline}
-                            username={userTwitter}
                         />
                     </div>
                     : null
