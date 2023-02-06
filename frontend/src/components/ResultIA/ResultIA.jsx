@@ -1,6 +1,9 @@
-import Tweet from "./Tweet"
+import React, {useState} from "react"
+import Tweet from "../TweetMore/Tweet"
 
-function ClassifyIA({ timeline }) {
+function ResultIA({ data }) {
+    const [percentageTotal, setTimeline] = useState(data.timelineUser.totalPercentage)
+    const [tweetMore, setTweetMore] = useState(data.timelineUser.tweetMore)
 
     return (
         <div className="self-center">
@@ -9,8 +12,8 @@ function ClassifyIA({ timeline }) {
 
                     <div className="relative">
                         <div className="flex">
-                            <img className='rounded-full w-20 h-20' src={timeline.profileURL} alt="timeline" />
-                            <p>{timeline.username}</p>
+                            <img className='rounded-full w-20 h-20' src={data.profileURL} alt="timeline" />
+                            <p>{data.username}</p>
                         </div>
                     </div>
                     <div class="relative overflow-x-auto">
@@ -31,7 +34,7 @@ function ClassifyIA({ timeline }) {
                                         Positivo
                                     </th>
                                     <td class="px-6 py-4">
-                                        {timeline.timelineUser.percentageTotal.Positivo * 10}%
+                                        {percentageTotal.Positivo * 10}%
                                     </td>
 
                                 </tr>
@@ -40,7 +43,7 @@ function ClassifyIA({ timeline }) {
                                         Toxico
                                     </th>
                                     <td class="px-6 py-4">
-                                        {timeline.timelineUser.percentageTotal.Toxico * 10}%
+                                        {percentageTotal.Toxico * 10}%
                                     </td>
                                 </tr>
                                 <tr class="bg-white dark:bg-gray-800">
@@ -48,7 +51,7 @@ function ClassifyIA({ timeline }) {
                                         Developer
                                     </th>
                                     <td class="px-6 py-4">
-                                        {timeline.timelineUser.percentageTotal.Developer * 10}%
+                                        {percentageTotal.Developer * 10}%
                                     </td>
 
                                 </tr>
@@ -57,7 +60,7 @@ function ClassifyIA({ timeline }) {
                                         Gamer
                                     </th>
                                     <td class="px-6 py-4">
-                                        {timeline.timelineUser.percentageTotal.Gamer * 10}%
+                                        {percentageTotal.Gamer * 10}%
                                     </td>
 
                                 </tr>
@@ -65,13 +68,12 @@ function ClassifyIA({ timeline }) {
                         </table>
                     </div>
                     <Tweet 
-                        tweet={timeline.timelineUser.bestClassify}
-                    />
-                    
+                        tweet={tweetMore}
+                    /> 
                 </div>
             </div>
         </div>
     )
 }
 
-export default ClassifyIA
+export default ResultIA

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Components.style.css'
-import Logo from '../assets/images/toax-logo.png'
+import Logo from '../../assets/images/toax-logo.png'
 
 function Header() {
     return (

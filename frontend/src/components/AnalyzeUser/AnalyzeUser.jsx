@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import ClassifyIA from './ClassifyIA';
+import ResultIA from '../ResultIA/ResultIA';
 import axios from 'axios';
-import UserInput from './userInput';
-import Faq from './Faq';
+import SearchUser from '../SearchUser/SearchUser';
 
-function UserTwitter({ userTwitter, setUserTwitter }) {
+function AnalyzeUser({ userTwitter, setUserTwitter }) {
     const [timeline, setTimeline] = useState({})
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
@@ -40,20 +39,19 @@ function UserTwitter({ userTwitter, setUserTwitter }) {
 
     return (
         <div className="container-dashboard">
-            <UserInput
+            <SearchUser
                 userTwitter={userTwitter}
                 setUserTwitter={setUserTwitter}
                 error={error}
                 loading={loading}
                 updateTimelines={updateTimelines}
             />
-            {console.log('timeline', timeline)}
-
+            
             {Object.keys(timeline).length !==  0 ?
                 !loading ?
                     <div className="self-center width-60">
-                        <ClassifyIA
-                            timeline={timeline}
+                        <ResultIA
+                            data={timeline}
                         />
                     </div>
                     : null
@@ -63,4 +61,4 @@ function UserTwitter({ userTwitter, setUserTwitter }) {
     )
 }
 
-export default UserTwitter
+export default AnalyzeUser

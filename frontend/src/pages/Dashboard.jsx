@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Header from '../components/Header'
-import UserTwitter from '../components/UserTwitter'
+import Header from '../components/Header/Header'
+import AnalyzeUser from '../components/AnalyzeUser/AnalyzeUser'
 
 function Dashboard() {
     const [userTwitter, setUserTwitter] = useState('')
@@ -8,7 +8,7 @@ function Dashboard() {
     return (
         <>
             <Header />
-            <UserTwitter
+            <AnalyzeUser
                 userTwitter={userTwitter}
                 setUserTwitter={setUserTwitter}
             />

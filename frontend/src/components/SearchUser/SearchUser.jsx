@@ -1,6 +1,6 @@
 import React from 'react'
 
-function UserInput({ userTwitter, setUserTwitter, error, loading, updateTimelines }) {
+function SearchUser({ userTwitter, setUserTwitter, error, loading, updateTimelines }) {
     return (
         <div className="self-center width-60">
             <p className="text-4xl font-black text-gray-900 dark:text-white mb-7">¿Qué tan tóxico es tu Twitter?
@@ -47,4 +47,4 @@ function UserInput({ userTwitter, setUserTwitter, error, loading, updateTimeline
     )
 }
 
-export default UserInput
+export default SearchUser

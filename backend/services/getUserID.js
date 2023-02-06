@@ -16,7 +16,7 @@ async function getUserId(username) {
             const userTwitterID = response.data.data.id
             const timelineUser = await getTimeLine(userTwitterID) 
             const profileURL = await getImageProfile(userTwitterID) 
-            console.log(profileURL)         
+
             return { timelineUser, profileURL, username }
         })
         .catch(function (error) {
@@ -50,8 +50,6 @@ async function getImageProfile(tweetId) {
 
 function deleteNormalImage(image) {    
     const imageURL = image.replace('_normal', '');
-    console.log('imageURL', imageURL)
-
     return imageURL
 }
 
