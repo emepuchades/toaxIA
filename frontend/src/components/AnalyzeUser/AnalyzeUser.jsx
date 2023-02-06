@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import ResultIA from '../ResultIA/ResultIA';
-import axios from 'axios';
 import getClassyfiIA from '../../services/getClassifyCohere';
 import SearchUser from '../SearchUser/SearchUser';
 
@@ -38,7 +37,8 @@ function AnalyzeUser({ userTwitter, setUserTwitter }) {
                 loading={loading}
                 updateTimelines={updateTimelines}
             />
-
+        {console.log(timeline)}
+        
             {Object.keys(timeline).length !== 0 ?
                 !loading ?
                     <div className="self-center width-60">

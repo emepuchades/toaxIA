@@ -1,9 +1,10 @@
-import React, {useState} from "react"
+import React, { useState, useEffect } from "react"
 import Tweet from "../TweetMore/Tweet"
+import Characteristics from "../Characteristics/Characteristics"
 
 function ResultIA({ data }) {
     const [percentageTotal, setTimeline] = useState(data.timelineUser.totalPercentage)
-    const [tweetMore, setTweetMore] = useState(data.timelineUser.tweetMore)
+    const [tweetMore, setTweetMore] = useState(data.timelineUser)
 
     return (
         <div className="self-center">
@@ -13,63 +14,15 @@ function ResultIA({ data }) {
                     <div className="relative">
                         <div className="flex">
                             <img className='rounded-full w-20 h-20' src={data.profileURL} alt="timeline" />
-                            <p>{data.username}</p>
+                            <p className="self-center ml-10">{data.username}</p>
                         </div>
                     </div>
-                    <div class="relative overflow-x-auto">
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">
-                                        Características
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Porcentage
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Positivo
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        {percentageTotal.Positivo * 10}%
-                                    </td>
-
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Toxico
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        {percentageTotal.Toxico * 10}%
-                                    </td>
-                                </tr>
-                                <tr class="bg-white dark:bg-gray-800">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Developer
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        {percentageTotal.Developer * 10}%
-                                    </td>
-
-                                </tr>
-                                <tr class="bg-white dark:bg-gray-800">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Gamer
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        {percentageTotal.Gamer * 10}%
-                                    </td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <Tweet 
+                    <Characteristics 
+                        percentageTotal={percentageTotal} />
+                    <Tweet
                         tweet={tweetMore}
-                    /> 
+                        profileURL={data.profileURL}
+                    />
                 </div>
             </div>
         </div>
