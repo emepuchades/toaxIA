@@ -14,12 +14,16 @@ async function getUserId(username) {
     const timeline = await axios(config)
         .then(async function (response) {
             const userTwitterID = response.data.data.id
-            const timelineUser = await getTimeLine(userTwitterID) 
-            const profileURL = await getImageProfile(userTwitterID) 
+            const timelineUser = await getTimeLine(userTwitterID)
+            const profileURL = await getImageProfile(userTwitterID)
 
-            return { timelineUser, profileURL, username }
+            if (timelineUser.error) {
+                return { error: timelineUser.error }
+            } else {
+                return { timelineUser, profileURL, username }
+            }
         })
-        .catch(function (error) {
+        .catch(function () {
             return { error: 'No existe el usuario' }
         });
     return timeline
@@ -40,15 +44,15 @@ async function getImageProfile(tweetId) {
             const profileImage = response.data.data[0].profile_image_url
             const profileURL = deleteNormalImage(profileImage)
 
-           return profileURL
+            return profileURL
         })
-        .catch(function (error) {
+        .catch(function () {
             return { error: 'No existe el usuario' }
         });
     return image
 }
 
-function deleteNormalImage(image) {    
+function deleteNormalImage(image) {
     const imageURL = image.replace('_normal', '');
     return imageURL
 }

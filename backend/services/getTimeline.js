@@ -4,7 +4,7 @@ const { getClasifyCohere } = require('./getClasify');
 async function getTimeLine(idUserName) {
     var config = {
         method: 'get',
-        url: `https://api.twitter.com/2/users/${idUserName}/tweets?max_results=10`,
+        url: `https://api.twitter.com/2/users/${idUserName}/tweets?max_results=${process.env.NUMBER_OF_TWEETS}`,
         headers: {
             'Authorization': `Bearer ${process.env.TWITTER_ACCESS_TOKEN_BEARER}`,
         }
@@ -15,7 +15,7 @@ async function getTimeLine(idUserName) {
                 const clasyCohere = await getClasifyCohere(response.data.data)
                 return clasyCohere
         })
-        .catch(function (error) {
+        .catch(function () {
             return { error: 'No se puede acceder a una cuenta candado' };
         });
 
