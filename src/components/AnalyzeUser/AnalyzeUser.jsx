@@ -37,7 +37,6 @@ function AnalyzeUser({ userTwitter, setUserTwitter }) {
                 loading={loading}
                 updateTimelines={updateTimelines}
             />
-        {console.log(timeline)}
             {Object.keys(timeline).length !== 0 ?
                 !loading ?
                     <div className="self-center width-60">
