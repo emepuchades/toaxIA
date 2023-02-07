@@ -19,7 +19,7 @@
 1. Primero tienes que clonar el repositorio:
 
 ```bash
-npm init docusaurus@latest
+git clone https://github.com/puchideev/toaxIA-hackathon.git
 ```
 2. Accede a la carpeta de toax y realiza estos comandos:
 ```bash
