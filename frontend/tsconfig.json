@@ -7,5 +7,13 @@
     "lib": ["WebWorker"],
     "isolatedModules": true,
     "moduleResolution": "node",
-  }
+    "target": "es6",
+    "module": "commonjs",
+    "noResolve": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "sourceMap": true,
+    "allowJs": true
+  },
+  "exclude": ["./node_modules/**/*"]
 }
