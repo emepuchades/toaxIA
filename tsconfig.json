@@ -1,19 +1,31 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "jsxImportSource": "react",
-    "types": ["astro/client", "preact"],
-    "lib": ["WebWorker"],
+    "types": [
+      "astro/client",
+      "preact"
+    ],
+    "lib": [
+      "WebWorker"
+    ],
     "isolatedModules": true,
     "moduleResolution": "node",
     "target": "es6",
-    "module": "commonjs",
+    "module": "esnext",
     "noResolve": false,
     "noImplicitAny": false,
     "removeComments": true,
     "sourceMap": true,
-    "allowJs": true
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true
   },
-  "exclude": ["./node_modules/**/*"]
+  "exclude": [
+    "./node_modules/**/*"
+  ],
+  "include": [
+    "src"
+  ]
 }
