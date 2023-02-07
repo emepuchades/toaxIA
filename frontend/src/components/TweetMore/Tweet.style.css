@@ -33,3 +33,8 @@
 .slick-prev:before, .slick-next:before {
     color: black;
 }
+
+.image-tweet { 
+  width: 9rem;
+  height: 3rem;
+}
