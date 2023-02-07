@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import ResultIA from '../ResultIA/ResultIA';
 import getClassyfiIA from '../../services/getClassifyCohere';
 import SearchUser from '../SearchUser/SearchUser';
@@ -16,7 +16,7 @@ function AnalyzeUser({ userTwitter, setUserTwitter }) {
         if (timeline.length > 0) { setTimeline({}) } else { setError('') }
         Object.keys(timeline).length !== 0 ? setTimeline({}) : null
         setLoading(true)
-        
+
         const response = await getClassyfiIA(userTwitter)
         response.error ?
             setError(response.error)

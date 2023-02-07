@@ -5,6 +5,7 @@
 
 .tweet-header {
   display: flex;
+  position: absolute;
   justify-content: space-between;
   margin-bottom: 5px;
 }
@@ -24,6 +25,7 @@
 .tweet-content {
   padding-left: 3px;
   padding-bottom: 20px;
+  margin-left: 40px;
 }
 
 .width-20 {
@@ -35,6 +37,6 @@
 }
 
 .image-tweet { 
-  width: 9rem;
   height: 3rem;
 }
+

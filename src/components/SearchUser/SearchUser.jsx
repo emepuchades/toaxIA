@@ -1,5 +1,3 @@
-import React from 'react'
-
 function SearchUser({ userTwitter, setUserTwitter, error, loading, updateTimelines }) {
     return (
         <div className="self-center width-60">
