@@ -27,20 +27,21 @@ npm install
 npm run dev
 ```
 Podrás ver la aplicación iniciada en localhost:3000
+
 3. Para la api, accede a la carpeta api dentro del directorio Toax:
 
 ```bash
 npm install
 npm run dev
 ```
-Podrás ver la aplicación iniciada en localhost:4000
+Podrás ver la aplicación api en localhost:4000
 
 Por último, crea un fichero .env, para añadir la key de la api de co:here y la api de twitter.
 
 ## Explora la API de co:here API
 
-Si quieres saber más sobre la api de co:here
+Si quieres saber más sobre la api de <a href="https://cohere.ai/"> co:here </a>
 
 ## Explora la comunidad de midudev
 
-Si quieres saber más sobre la comunidad de  midudev
+Si quieres saber más sobre la comunidad de <a href="https://www.youtube.com/c/midudev"> midudev </a>
