@@ -1,2 +1,0 @@
-# toaxIA-hackathon
-
