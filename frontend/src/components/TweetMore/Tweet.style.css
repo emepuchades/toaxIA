@@ -30,12 +30,6 @@
     width: 20rem;
 }
 
-.slick-next {
-    right: -25px;
-    background-color: black;
-}
-
-.slick-prev {
-    left: -25px;
-    background-color: black;
+.slick-prev:before, .slick-next:before {
+    color: black;
 }

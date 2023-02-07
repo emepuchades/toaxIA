@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import './Tweet.style.css'
 
 function Tweet({ tweet, profileURL }) {
-  const confidences = tweet.tweetMore
+  const confidences = tweet[0].tweetMore
   var settings = {
     dots: false,
     infinite: true,
@@ -13,7 +13,6 @@ function Tweet({ tweet, profileURL }) {
     slidesToShow: 1,
     slidesToScroll: 1
   };
-  console.log('tweet', tweet)
 
   return (
     <div>

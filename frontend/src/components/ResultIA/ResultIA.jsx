@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Tweet from "../TweetMore/Tweet"
 import Characteristics from "../Characteristics/Characteristics"
+import { TwitterShareButton, TwitterIcon} from 'react-share';
 
 function ResultIA({ data }) {
     const percentageTotal = useState(data.timelineUser.totalPercentage)
@@ -14,7 +15,12 @@ function ResultIA({ data }) {
                         <div className="flex">
                             <img className='rounded-full w-20 h-20' src={data.profileURL} alt="timeline" />
                             <p className="self-center ml-10">{data.username}</p>
-                            <p>compartir</p>
+                            <TwitterShareButton
+                                url={'https://twitter.com/'}
+                                title={'Toax'}
+                                //imageURL={props.data.product_info.image_path}
+                                children={<TwitterIcon size={32} round={true} />}
+                            />
                         </div>
                     </div>
                     <Characteristics 
