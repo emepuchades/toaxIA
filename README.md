@@ -15,6 +15,8 @@
 <p>Toax realiza una búsqueda en el timeline de los tweets, para detectar tu característica como twittero.</p>
 <p>¿Y como sabe la característica de cada tweet? Gracias a la API de co:here, donde te proporciona una IA que puede detectar emociones o características que le proporciones.</p>
 
+![toax-principal](https://github.com/emepuchades/toaxIA/assets/100128850/3633ca14-bc3c-44c1-b126-32f71e6ddc56)
+
 ## Instalación
 1. Primero tienes que clonar el repositorio:
 
@@ -42,6 +44,7 @@ Por último, crea un fichero .env, para añadir la key de la api de co:here y la
 
 Si quieres saber más sobre la api de <a href="https://cohere.ai/"> co:here </a>
 
-## Explora la comunidad de midudev
+## Otras captutas de pantalla
 
-Si quieres saber más sobre la comunidad de <a href="https://www.youtube.com/c/midudev"> midudev </a>
+![Untitled](https://github.com/emepuchades/toaxIA/assets/100128850/288ec298-0632-492f-9d53-800217579e75)
+
